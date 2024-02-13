@@ -1,0 +1,19 @@
+self: wasserstein_hh
+
+xo_path: "TODO_path_to_observations.pkl"
+
+wasserstein_slices: 500
+wasserstein_order: 2
+use_log_sw: True
+num_chunks: 1
+num_kole_samples: 512
+
+pretraining_steps: 2000 
+linear_decay_steps: 2000
+lambda_steps: 11000
+fin_lambda: 0.2
+
+learning_rate: 0.0001
+weight_decay: 0.00001
+
+early_stopping_patience: 1000000

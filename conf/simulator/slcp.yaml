@@ -1,0 +1,4 @@
+self: slcp
+
+box_domain_lower: -5.0
+box_domain_upper: 5.0

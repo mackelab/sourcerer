@@ -1,0 +1,4 @@
+self: sir
+
+box_domain_lower: 0.001
+box_domain_upper: 3.0

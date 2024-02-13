@@ -1,0 +1,9 @@
+# @package _global_
+defaults:
+  - override /simulator: stub
+  - override /source: wasserstein_hh
+  - override /surrogate: load_hh_surrogate
+
+surrogate:
+  surrogate_path: "../results_sourcerer/surrogates/hh_surrogate.pt"
+  ydim: 5

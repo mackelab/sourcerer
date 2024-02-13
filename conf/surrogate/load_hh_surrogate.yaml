@@ -1,0 +1,8 @@
+self: load_hh_surrogate
+surrogate_path: null
+
+xdim: 13
+ydim: 9
+
+num_hidden_layers: 4
+hidden_layer_dim: 256

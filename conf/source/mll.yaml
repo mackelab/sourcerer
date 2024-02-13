@@ -1,0 +1,24 @@
+self: mll
+
+# To have a fair comparison increase to 11112 because this method uses a validation set.
+num_obs: 11112
+num_eval_obs: 10000
+
+batch_size: 128
+nb_mc_integration_steps: 1024
+num_kole_samples: 512
+nb_epochs: 1000
+early_stopping_min_epochs: 10
+early_stopping_patience: 50 
+
+# Example: 10000 / 128 = 78.125 -> 79 batches per epoch
+pretraining_steps: 0 
+linear_decay_steps: 500
+lambda_steps: 1000000000 # just a big number
+fin_lambda: 0.3
+
+learning_rate: 0.0001
+weight_decay: 0.00001
+
+validation_set_size: 0.1
+print_every: 10

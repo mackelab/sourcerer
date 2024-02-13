@@ -1,0 +1,39 @@
+text.usetex          : False
+mathtext.default     : regular
+
+font.serif           : Arial, sans-serif
+font.sans-serif      : Arial, sans-serif
+font.cursive         : Arial, sans-serif
+font.size            : 8
+figure.titlesize     : medium
+legend.fontsize      : medium
+axes.titlesize       : medium
+axes.labelsize       : medium
+xtick.labelsize      : medium
+ytick.labelsize      : medium
+
+image.interpolation   : nearest
+image.resample        : False
+image.composite_image : True
+
+axes.spines.left     : True
+axes.spines.bottom   : True
+axes.spines.top      : False
+axes.spines.right    : False
+axes.facecolor        : 'white'
+
+axes.linewidth       : 1.0
+xtick.major.width    : 1.0
+xtick.minor.width    : 1.0
+ytick.major.width    : 1.0
+ytick.minor.width    : 1.0
+lines.linewidth      : 1.0
+lines.markersize     : 3.0
+
+legend.frameon       : False
+
+savefig.facecolor    : 'white'
+
+pdf.fonttype         : 42
+
+figure.max_open_warning : 0

@@ -1,0 +1,4 @@
+self: inverse_kinematics
+
+box_domain_lower: -3.141592653589
+box_domain_upper: 3.141592653589

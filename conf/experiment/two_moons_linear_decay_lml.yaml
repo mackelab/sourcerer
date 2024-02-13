@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - override /simulator: two_moons
+  - override /source: mll
+  - override /surrogate: load_surrogate
+
+source:
+  linear_decay_steps: 500 
+
+surrogate:
+  surrogate_path: "../results_sourcerer/surrogates/two_moons_surrogate.pt"

@@ -1,0 +1,4 @@
+self: lotka_volterra
+
+box_domain_lower: 0.1
+box_domain_upper: 3.0

@@ -1,0 +1,20 @@
+self: wasserstein
+
+num_obs: 10000
+num_eval_obs: 10000
+
+wasserstein_slices: 500
+wasserstein_order: 2
+use_log_sw: True
+num_chunks: 1
+num_kole_samples: 512
+
+pretraining_steps: 0 
+linear_decay_steps: 500
+lambda_steps: 3000
+fin_lambda: 0.3
+
+learning_rate: 0.0001
+weight_decay: 0.00001
+
+early_stopping_patience: 500

@@ -1,0 +1,4 @@
+self: real_nvp
+
+hidden_layer_dim: 64
+flow_length: 8

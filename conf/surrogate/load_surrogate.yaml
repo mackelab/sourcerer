@@ -1,0 +1,5 @@
+self: load_surrogate
+surrogate_path: "TODO_path_to_surrogate.pt"
+
+flow_length: 8
+hidden_layer_dim: 50

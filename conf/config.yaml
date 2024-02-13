@@ -1,0 +1,6 @@
+defaults:
+  - base: default
+  - simulator: inverse_kinematics
+  - surrogate: no_surrogate
+  - source_model: sampler
+  - source: wasserstein

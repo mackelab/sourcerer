@@ -1,0 +1,5 @@
+self: no_surrogate
+
+# Some dummy parameters since the surrogate will still be initialized for convenience!
+flow_length: 1
+hidden_layer_dim: 5

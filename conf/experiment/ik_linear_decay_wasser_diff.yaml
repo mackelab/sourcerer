@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - override /simulator: inverse_kinematics
+  - override /source: wasserstein
+  - override /surrogate: no_surrogate
+
+source:
+  linear_decay_steps: 500

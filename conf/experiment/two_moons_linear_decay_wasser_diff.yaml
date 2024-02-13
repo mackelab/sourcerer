@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - override /simulator: two_moons
+  - override /source: wasserstein
+  - override /surrogate: no_surrogate
+
+source:
+  linear_decay_steps: 500

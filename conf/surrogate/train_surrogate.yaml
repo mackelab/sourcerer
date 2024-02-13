@@ -1,0 +1,11 @@
+self: train_surrogate
+num_training_samples: 15000
+
+flow_length: 8
+hidden_layer_dim: 50
+
+nb_epochs: 1000
+surrogate_lr: 0.0001
+surrogate_weight_decay: 0.00005
+
+early_stopping_patience: 50
