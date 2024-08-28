@@ -395,10 +395,12 @@ def kozachenko_leonenko_estimator(samples, eps=1e-100, hack=1e10, on_torus=True)
     nn_dist = torch.min(
         pairdist + torch.eye(len(samples), device=samples.device) * hack, dim=1
     ).values
+
+    nn_dist = torch.clamp(nn_dist, min=eps)
     return (
-        dim * torch.mean(torch.log(2.0 * nn_dist + eps))
-        + np.log(((np.pi ** (dim / 2.0)) / gamma(1.0 + (dim / 2.0))) / (2.0**dim))
-        - digamma(1.0)  # nearest neighbor
+        dim * torch.mean(torch.log(nn_dist))
+        + np.log(((np.pi ** (dim / 2.0)) / gamma(1.0 + (dim / 2.0))))
+        - digamma(1)  # nearest neighbor
         + digamma(num_samples)
     )
 
