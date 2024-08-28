@@ -46,12 +46,10 @@ with plt.rc_context(rc=FL.get_rc(50, 50), fname=matplotlibrc_path):
                     os.path.join(base_path, folder, f"{tag}_{i}_simu_c2st.csv"),
                 )
                 swd[ff, i] = np.mean(
-                    np.sqrt(
-                        np.loadtxt(
-                            os.path.join(
-                                base_path, folder, f"{tag}_{i}_simu_pf_swds.csv"
-                            ),
-                        )
+                    np.loadtxt(
+                        os.path.join(
+                            base_path, folder, f"{tag}_{i}_simu_pf_swds.csv"
+                        ),
                     )
                 )
 
@@ -150,11 +148,11 @@ with plt.rc_context(rc=FL_SIR.get_rc(94, 40), fname=matplotlibrc_path):
 
     ground_truth_swd = np.array(
         [
-            5.046440492151305e-06,
-            3.523797431626008e-06,
-            6.95927565175225e-06,
-            5.357597729016561e-06,
-            4.805583557754289e-06,
+            0.00224643,
+            0.00187718,
+            0.00263804,
+            0.00231465,
+            0.00219216
         ]
     )
 
@@ -176,10 +174,8 @@ with plt.rc_context(rc=FL_SIR.get_rc(94, 40), fname=matplotlibrc_path):
                 os.path.join(base_path, folder, f"{tag}_{i}_simu_c2st.csv"),
             )
             swd[ff, i] = np.mean(
-                np.sqrt(
-                    np.loadtxt(
-                        os.path.join(base_path, folder, f"{tag}_{i}_simu_pf_swds.csv"),
-                    )
+                np.loadtxt(
+                    os.path.join(base_path, folder, f"{tag}_{i}_simu_pf_swds.csv"),
                 )
             )
 
@@ -213,7 +209,7 @@ with plt.rc_context(rc=FL_SIR.get_rc(94, 40), fname=matplotlibrc_path):
     ax.set_yticks([-3.5, 3])
 
     ax2 = ax.twinx()
-    ax2.axhline(np.mean(np.sqrt(ground_truth_swd)), color="black", linestyle="dashdot")
+    ax2.axhline(np.mean(ground_truth_swd), color="black", linestyle="dashdot")
     ax2.errorbar(
         lambdas[1:],
         swd_mean[1:],
@@ -262,11 +258,11 @@ with plt.rc_context(rc=FL_LV.get_rc(94, 40), fname=matplotlibrc_path):
 
     ground_truth_swd = np.array(
         [
-            6.649745046161115e-05,
-            6.844459858257324e-05,
-            7.343765173573047e-05,
-            6.386462337104604e-05,
-            7.03332552802749e-05,
+            0.0081546,
+            0.00827313,
+            0.00856958,
+            0.00799153,
+            0.00838649
         ]
     )
 
@@ -288,10 +284,8 @@ with plt.rc_context(rc=FL_LV.get_rc(94, 40), fname=matplotlibrc_path):
                 os.path.join(base_path, folder, f"{tag}_{i}_simu_c2st.csv"),
             )
             swd[ff, i] = np.mean(
-                np.sqrt(
-                    np.loadtxt(
-                        os.path.join(base_path, folder, f"{tag}_{i}_simu_pf_swds.csv"),
-                    )
+                np.loadtxt(
+                    os.path.join(base_path, folder, f"{tag}_{i}_simu_pf_swds.csv"),
                 )
             )
 
@@ -325,7 +319,7 @@ with plt.rc_context(rc=FL_LV.get_rc(94, 40), fname=matplotlibrc_path):
     ax.set_yticks([-2, 2])
 
     ax2 = ax.twinx()
-    ax2.axhline(np.mean(np.sqrt(ground_truth_swd)), color="black", linestyle="dashdot")
+    ax2.axhline(np.mean(ground_truth_swd), color="black", linestyle="dashdot")
     ax2.errorbar(
         lambdas[1:],
         swd_mean[1:],
@@ -388,10 +382,8 @@ with plt.rc_context(rc=FL_HH.get_rc(45, 15), fname=matplotlibrc_path):
                 os.path.join(base_path, folder, f"{tag}_{i}_simu_c2st.csv"),
             )
             swd[ff, i] = np.mean(
-                np.sqrt(
-                    np.loadtxt(
-                        os.path.join(base_path, folder, f"{tag}_{i}_simu_pf_swd.csv"),
-                    )
+                np.loadtxt(
+                    os.path.join(base_path, folder, f"{tag}_{i}_simu_pf_swd.csv"),
                 )
             )
 
@@ -482,10 +474,8 @@ with plt.rc_context(rc=FL_HH.get_rc(44, 15), fname=matplotlibrc_path):
                 os.path.join(base_path, folder, f"{tag}_{i}_simu_c2st.csv"),
             )
             swd[ff, i] = np.mean(
-                np.sqrt(
-                    np.loadtxt(
-                        os.path.join(base_path, folder, f"{tag}_{i}_simu_pf_swd.csv"),
-                    )
+                np.loadtxt(
+                    os.path.join(base_path, folder, f"{tag}_{i}_simu_pf_swd.csv"),
                 )
             )
 

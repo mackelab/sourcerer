@@ -44,8 +44,5 @@ def sliced_wasserstein_distance(
 
     wasserstein_distance = torch.pow(torch.abs(wasserstein_distance), p)
 
-    # NOTE: currently computes the "squared" wasserstein distance
-    # No p-th root is applied
 
-    # return torch.pow(torch.mean(wasserstein_distance, dim=(-2, -1)), 1 / p)
-    return torch.mean(wasserstein_distance, dim=(-2, -1))
+    return torch.pow(torch.mean(wasserstein_distance, dim=(-2, -1)), 1 / p)

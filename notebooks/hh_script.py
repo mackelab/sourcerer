@@ -301,8 +301,8 @@ for idx in range(10):
     )
 
 # %%
-print(np.sqrt(surro_dists))
-print(np.mean(np.sqrt(surro_dists)))
+print(surro_dists)
+print(np.mean(surro_dists))
 
 save_numpy_csv(
     surro_dists,
@@ -387,7 +387,7 @@ simu_dist = sliced_wasserstein_distance(
     num_projections=4096,
 )
 
-print(np.sqrt(simu_dist))
+print(simu_dist)
 
 # %%
 save_numpy_csv(
