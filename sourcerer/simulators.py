@@ -1,4 +1,5 @@
 """Taken from https://github.com/MaximeVandegar/NEB/blob/main/simulators"""
+
 import numpy as np
 import torch
 from torch import nn
@@ -36,6 +37,7 @@ class TwoMoonsSimulator:
     - Vandegar et al. (2020): "Neural Empirical Bayes Neural Empirical Bayes: Source Distribution Estimation and its Applications to Simulation-Based Inference"
     - Lueckmann et al. (2021): "Benchmarking Simulation-Based Inference"
     """
+
     def __init__(self, mean_radius=0.1, std_radius=0.01):
         self.mean_radius = mean_radius
         self.std_radius = std_radius
@@ -95,10 +97,11 @@ class TwoMoonsSimulator:
 class SLCPSimulator:
     """
     Simple Likelihood Complex Posterior simulator, as in:
-       
+
     - Vandegar et al. (2020): "Neural Empirical Bayes Neural Empirical Bayes: Source Distribution Estimation and its Applications to Simulation-Based Inference"
     - Lueckmann et al. (2021): "Benchmarking Simulation-Based Inference"
     """
+
     def __init__(self):
         self.ydim = 8
         self.xdim = 5
@@ -154,8 +157,9 @@ class InverseKinematicsSimulator:
     Inverse Kinematic Simulator, as in:
 
     - Vandegar et al. (2020): "Neural Empirical Bayes Neural Empirical Bayes: Source Distribution Estimation and its Applications to Simulation-Based Inference"
-    
+
     """
+
     def __init__(
         self, prior_var=None, l1=1 / 2, l2=1 / 2, l3=1, noise=0.01 / 180 * np.pi
     ):
@@ -228,13 +232,45 @@ class InverseKinematicsSimulator:
         pass
 
 
+class GaussianMixtureSimulator:
+    """
+    Gaussian Mixture Simulator, as in:
+
+    - Lueckmann et al. (2021): "Benchmarking Simulation-Based Inference"
+    """
+
+    def __init__(self):
+        self.xdim = 2
+        self.ydim = 2
+        self.device = "cpu"
+
+    def to(self, device):
+        self.device = device
+        return self
+
+    def sample_prior(self, size):
+        return 0.5 * torch.rand(size, self.xdim, device=self.device) + 0.5
+
+    def sample(self, context):
+        rand_ints = torch.randint(0, 2, (context.shape[0],))
+        vector = torch.where(rand_ints == 0, 0.1, 1.0).unsqueeze(1).to(self.device)
+        return context + vector * torch.randn(context.shape, device=self.device)
+
+    def train(self):
+        pass
+
+    def eval(self):
+        pass
+
+
 class SIRSimulator:
     """
     Susecptible, Infectious, Recovered (SIR) simulator as in:
 
     - Lueckmann et al. (2021): "Benchmarking Simulation-Based Inference"
-    
+
     """
+
     def __init__(self):
         super().__init__()
         self.ydim = 50
@@ -301,8 +337,9 @@ class LotkaVolterraSimulator:
     Lotka-Volterra simulator, as in:
 
     Gloeckler et al. (2023) - Adversarial Robustness of Amortized Bayesian Inference
-    
+
     """
+
     def __init__(self):
         self.ydim = 100
         self.xdim = 4

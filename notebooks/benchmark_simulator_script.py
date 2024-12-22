@@ -13,13 +13,14 @@ from sourcerer.fit_surrogate import (
 )
 from sourcerer.likelihood_estimator import train_lml_source
 from sourcerer.real_nvp import (
-    Sampler,
     RealNVPs,
+    Sampler,
     TemperedUniform,
     kozachenko_leonenko_estimator,
 )
 from sourcerer.sbi_classifier_two_sample_test import c2st_scores
 from sourcerer.simulators import (
+    GaussianMixtureSimulator,
     InverseKinematicsSimulator,
     LotkaVolterraSimulator,
     SIRSimulator,
@@ -47,6 +48,8 @@ def get_simulator(cfg):
         return InverseKinematicsSimulator()
     elif cfg.simulator.self == "slcp":
         return SLCPSimulator()
+    elif cfg.simulator.self == "gaussian_mixture":
+        return GaussianMixtureSimulator()
     elif cfg.simulator.self == "sir":
         return SIRSimulator()
     elif cfg.simulator.self == "lotka_volterra":

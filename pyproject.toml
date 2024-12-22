@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sourcerer"
+version = "0.1.0"
+description = "Sample-based Maximum Entropy Source Distribution Estimation"
+authors = [
+    { name = "Julius Vetter" },
+    { name = "Guy Moss" }
+]
+requires-python = ">=3.8.0"
+readme = "README.md"
+keywords = ["maximum entropy", "source distribution", "machine learning"]
+
+dependencies = [
+    "numpy",
+    "torch",
+    "matplotlib",
+    "scikit-learn",
+    "hydra-core",
+    "pandas",
+    "corner",
+    "scipy",
+    "brian2",
+    "seaborn",
+    "torchdiffeq",
+]
+
+[project.optional-dependencies]
+dev = [
+    "autoflake",
+    "black",
+    "deepdiff",
+    "flake8",
+    "isort",
+    "ipykernel",
+    "jupyter",
+    "pep517",
+    "pytest",
+    "pyyaml",
+]
+
+[tool.setuptools.packages.find]
+include = ["sourcerer*"]
