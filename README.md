@@ -12,11 +12,11 @@ Install all dependencies with `pip install -e .`
 ## Running TM, IK, SLCP, GM or SIR, Lotka-Volterra tasks:
 `hydra` is used for configuration management and command line interface.
 
-You can run all benchmark either via the commandline or interactively (with VSCode cells or Jupyter notebooks) using the `benchmark_simulator_script`.
+You can run all benchmark tasks either from the command line or interactively (with VSCode cells or Jupyter notebooks) using the `benchmark_simulator_script`.
 
-To run the interactively, overwrite the `local_overrides` list with your desired configuration. 
+To run them interactively, overwrite the `local_overrides` list with your desired configuration. 
 
-Alternatively, launch the script in the command line: `python3 benchmark_simulator_script.py simulator=two_moons` (as an example, the `two_moons` task is selected here).
+Alternatively, you can run the script from the command line: `python3 benchmark_simulator_script.py simulator=two_moons` (as an example, the `two_moons` task is selected here).
 
 By default, results will be saved in `results_sourcerer`.
 
